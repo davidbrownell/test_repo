@@ -12,6 +12,7 @@ jobs:
 
     steps:
       - name: Step 1
+        id: local_string
         uses: actions/github-script@v6
         with:
           result-encoding: string
@@ -44,3 +45,7 @@ jobs:
             console.log(`Local Date: ${local_date}`);
 
             return local_date.toISOString();
+
+      - name: Step 2
+        run: |
+          echo "Local time: ${{ steps.local_string.outputs.result }}"
