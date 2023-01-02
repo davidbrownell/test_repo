@@ -18,7 +18,7 @@ jobs:
           script: |
             const utc_date = new Date();
 
-            console.log(`UTC Date: ${utc_date}`);
+            console.log(`UTC Date:   ${utc_date}`);
 
             const offset_regex = /^(\-)?(\d{2}):(\d{2})$/;
             const match = offset_regex.exec("${{ inputs.utc_offset }}");
