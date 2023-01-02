@@ -1,4 +1,5 @@
 name: Periodic
+run-name: "Local Midnight: ${{ github.run_number }} [${{ github.actor }}] on ${{ github.ref_name }}"
 
 on:
   schedule:
