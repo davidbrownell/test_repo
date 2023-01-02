@@ -8,6 +8,6 @@ on:
 jobs:
   _dfa01139-d687-4c85-b685-3547bc346d9c:
     name: "periodic hourly job #1"
-    uses: davidbrownell/test_repo/.github/workflows/callable.yaml
+    uses: davidbrownell/test_repo/.github/workflows/callable.yaml@latest
     with:
       utc_offset: "-08:00"
