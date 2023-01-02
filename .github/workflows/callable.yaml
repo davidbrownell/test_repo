@@ -1,0 +1,46 @@
+name: Callable
+
+on:
+  workflow_call:
+    inputs:
+      utc_offset: {type: string, required: true, description: BugBug}
+
+jobs:
+  _803bde8c-83fa-4f3e-8e17-2d759c7ad205:
+    name: "Job 1"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1
+        uses: actions/github-script@v6
+        with:
+          result-encoding: string
+          script: |
+            const utc_date = new Date();
+
+            console.log(`UTC Date: ${utc_date}`);
+
+            const offset_regex = /^(\-)?(\d{2}):(\d{2})$/;
+            const match = offset_regex.exec("${{ inputs.utc_offset }}");
+
+            if(!match)
+              throw new Error("'${{ inputs.utc_offset }}' is not a valid UTC offset string.");
+
+            const offset_minutes = (
+              () => {
+                let offset = Number(match[2]) * 60 + Number(match[3]);
+
+                if(match[1])
+                  return -offset;
+
+                return offset;
+              }
+            )();
+
+            let local_date = new Date();
+
+            local_date.setMinutes(utc_date.getMinutes() + offset_minutes);
+
+            console.log(`Local Date: ${local_date}`);
+
+            return local_date.toISOString();

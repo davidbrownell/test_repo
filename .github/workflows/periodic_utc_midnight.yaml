@@ -1,0 +1,12 @@
+name: Periodic
+
+on:
+  schedule:
+    - cron '0 0 * * *' # 12am UTC
+
+jobs:
+  _dfa01139-d687-4c85-b685-3547bc346d9c:
+    name: "periodic hourly job #1"
+    uses: davidbrownell/test_repo/.github/workflows/callable.yaml
+    with:
+      utc_offset: "-08:00"
