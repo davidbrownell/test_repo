@@ -3,7 +3,7 @@ run-name: "Hourly: ${{ github.run_number }} [${{ github.actor }}] on ${{ github.
 
 on:
   schedule:
-    - cron '0 * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   _dfa01139-d687-4c85-b685-3547bc346d9c:

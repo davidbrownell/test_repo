@@ -3,7 +3,7 @@ run-name: "UTC Midnight: ${{ github.run_number }} [${{ github.actor }}] on ${{ g
 
 on:
   schedule:
-    - cron '0 0 * * *' # 12am UTC
+    - cron: '0 0 * * *' # 12am UTC
 
 jobs:
   _dfa01139-d687-4c85-b685-3547bc346d9c:
