@@ -1,4 +1,4 @@
-name: Periodic
+name: Periodic (Hourly)
 run-name: "Hourly: ${{ github.run_number }} [${{ github.actor }}] on ${{ github.ref_name }}"
 
 on:
