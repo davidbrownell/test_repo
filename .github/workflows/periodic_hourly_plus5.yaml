@@ -1,0 +1,13 @@
+name: Periodic (Hourly + 5)
+run-name: "Hourly: ${{ github.run_number }} [${{ github.actor }}] on ${{ github.ref_name }}"
+
+on:
+  schedule:
+    - cron: '5 * * * *'
+
+jobs:
+  _dfa01139-d687-4c85-b685-3547bc346d9c:
+    name: "periodic hourly + 5 job #1"
+    uses: davidbrownell/test_repo/.github/workflows/callable.yaml@latest
+    with:
+      utc_offset: "-08:00"
